@@ -6,7 +6,8 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:jsx-a11y/recommended',
-    'eslint-config-prettier'
+    'eslint-config-prettier',
+    "plugin:@tanstack/eslint-plugin-query/recommended"
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
@@ -14,4 +15,15 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
   },
+  settings: {
+    "import/resolver": {
+      typescript: {},
+      alias: [
+        ['@/', './src/'],
+      ],
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
 }

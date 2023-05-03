@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import type { UseFormRegisterReturn } from "react-hook-form";
 import { glPadding, glBorderRadius } from "@/shared/styles";
 
 const fieldsetStyles = css`
@@ -18,18 +19,30 @@ const inputStyles = css`
   ${glBorderRadius};
 `;
 
-interface InputProps {
+interface InputProps<InputName extends string> {
   label?: string;
-  id: string;
   type?: string;
+  registerProps: UseFormRegisterReturn<InputName>;
   required?: boolean;
 }
 
-export default function Input({ label, id, type, required }: InputProps) {
+export default function Input<InputName extends string>({
+  label,
+  type,
+  registerProps,
+  required,
+}: InputProps<InputName>) {
   return (
     <fieldset className={fieldsetStyles}>
-      <label htmlFor={id}>{`${label} ${required ?? false ? "*" : ""}`}</label>
-      <input className={inputStyles} id={id} type={type} required={required} />
+      <label htmlFor={registerProps.name}>{`${label} ${
+        required ?? false ? "*" : ""
+      }`}</label>
+      <input
+        className={inputStyles}
+        type={type}
+        required={required}
+        {...registerProps}
+      />
     </fieldset>
   );
 }

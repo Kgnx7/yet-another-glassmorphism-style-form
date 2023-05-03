@@ -1,6 +1,8 @@
-import { Glass, Input, Button } from "@/shared/ui";
 import { css } from "@emotion/css";
-import useLogin from "../model/useLogin";
+import { useForm } from "react-hook-form";
+import { Glass, Input, Button } from "@/shared/ui";
+
+import { LoginFormModel, useLogin } from "../model";
 
 const loginWidgetTitle = css`
   margin: 0;
@@ -26,19 +28,26 @@ const logInFormStyles = css`
 `;
 
 export default function LoginWidget() {
-  const { tryToLogin, loginFormRef } = useLogin();
+  const { register, handleSubmit } = useForm<LoginFormModel>();
+  const { tryToLogin } = useLogin();
 
   return (
     <Glass>
       <h2 className={loginWidgetTitle}>Hey, hello 👋</h2>
 
-      <form
-        className={logInFormStyles}
-        onSubmit={tryToLogin}
-        ref={loginFormRef}
-      >
-        <Input label="Email" id="email" type="email" required />
-        <Input label="Password" id="password" type="password" required />
+      <form className={logInFormStyles} onSubmit={handleSubmit(tryToLogin)}>
+        <Input
+          label="Email"
+          type="email"
+          registerProps={register("email")}
+          required
+        />
+        <Input
+          label="Password"
+          type="password"
+          registerProps={register("password")}
+          required
+        />
         <Button ButtonProps={{ type: "submit" }}>Login</Button>
       </form>
     </Glass>

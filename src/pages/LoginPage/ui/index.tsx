@@ -53,15 +53,13 @@ const pageTitleStyles = css`
 const picturesStyles = css`
   transform: translate(-100%, -10%) rotate(-20deg);
 
-  @media (max-width: 425px) {
-    transform: translate(0%, -10%) rotate(0deg);
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
   }
 
-  img {
-    @media (max-width: 768px) {
-      width: 100px;
-      height: 100px;
-    }
+  @media (max-width: 425px) {
+    transform: translate(0%, -10%) rotate(0deg);
   }
 `;
 
@@ -73,9 +71,10 @@ export default function LogInPage() {
 
         <LoginWidget />
 
-        <picture className={picturesStyles}>
+        <picture>
           <source srcSet={BusinessCatWebP} />
           <img
+            className={picturesStyles}
             src={BusinessCatPng}
             alt="funny cat"
             width="150px"
