@@ -1,0 +1,10 @@
+@import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+*:focus-visible {
+    outline: 1px dashed #2980b9;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
