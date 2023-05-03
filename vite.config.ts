@@ -6,10 +6,17 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   base: "/yet-another-glassmorphism-style-form/",
-  publicDir: "/yet-another-glassmorphism-style-form/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src/"),
     },
   },
+  // experimental: {
+  //   renderBuiltUrl(
+  //     filename: string,
+  //     { hostType }: { hostType: "js" | "css" | "html" }
+  //   ) {
+
+  //   },
+  // },
 });
