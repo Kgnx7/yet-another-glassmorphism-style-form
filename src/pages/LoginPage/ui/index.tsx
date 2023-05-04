@@ -6,13 +6,8 @@ import { Footer } from "@/shared/ui";
 
 const pageStyles = css`
   min-height: 100vh;
-  background: var(--palette-primary);
-  background: linear-gradient(
-    to right,
-    white,
-    var(--blue-light),
-    var(--palette-primary)
-  );
+  background: var(--blue-regular);
+  background: linear-gradient(to top, var(--blue-light), var(--blue-regular));
 
   display: flex;
   flex-direction: column;

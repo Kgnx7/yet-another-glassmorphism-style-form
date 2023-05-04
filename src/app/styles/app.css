@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
 :root {
-    --blue-light: #6dd5fa;
-    --blue-regular: #2980b9;
+    --blue-light: #78ffd6;
+    --blue-regular: #007991;
 
     --palette-primary: var(--blue-regular); 
     --base-border-radius: 10px;
