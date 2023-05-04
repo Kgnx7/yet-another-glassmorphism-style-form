@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import type { UseFormRegisterReturn } from "react-hook-form";
-import { glPadding, glBorderRadius } from "@/shared/styles";
 
 const fieldsetStyles = css`
   border: none;
@@ -15,8 +14,9 @@ const inputStyles = css`
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: white;
-  ${glPadding};
-  ${glBorderRadius};
+  height: var(--base-height);
+  padding: 0 var(--base-padding);
+  border-radius: var(--base-border-radius);
 `;
 
 interface InputProps<InputName extends string> {

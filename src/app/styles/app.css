@@ -1,8 +1,19 @@
 @import "normalize.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
+:root {
+    --blue-light: #6dd5fa;
+    --blue-regular: #2980b9;
+
+    --palette-primary: var(--blue-regular); 
+    --base-border-radius: 10px;
+    --base-padding: 15px;
+
+    --base-height: 50px;
+} 
+
 *:focus-visible {
-    outline: 1px dashed #2980b9;
+    outline: 1px dashed var(--palette-primary);
 }
 
 body {

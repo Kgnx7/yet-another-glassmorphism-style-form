@@ -3,30 +3,23 @@ import { LoginWidget } from "@/widgets";
 import BusinessCatWebP from "@/shared/assets/images/business.webp";
 import BusinessCatPng from "@/shared/assets/images/business.png";
 import { Footer } from "@/shared/ui";
-import { glPadding } from "@/shared/styles";
 
 const pageStyles = css`
   min-height: 100vh;
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: var(--palette-primary);
   background: linear-gradient(
     to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    white,
+    var(--blue-light),
+    var(--palette-primary)
+  );
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   container-type: inline-size;
-  ${glPadding};
+  padding: var(--base-padding);
 
   @media (max-width: 425px) {
     align-items: stretch;

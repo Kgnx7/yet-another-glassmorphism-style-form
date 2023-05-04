@@ -1,6 +1,5 @@
 import type React from "react";
 import { css, cx } from "@emotion/css";
-import { glBorderRadius } from "@/shared/styles";
 
 const glassCardStyles = css`
   background: rgba(255, 255, 255, 0.05);
@@ -11,7 +10,7 @@ const glassCardStyles = css`
   color: white;
   padding: 40px 30px;
 
-  ${glBorderRadius};
+  border-radius: var(--base-border-radius);
 `;
 
 interface GlassProps {
