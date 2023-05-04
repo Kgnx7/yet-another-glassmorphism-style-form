@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import { useForm } from "react-hook-form";
-import { Glass, Input, Button, Checkbox } from "@/shared/ui";
+import { Glass, Input, Button } from "@/shared/ui";
 
 import { LoginFormModel, useLogin } from "../model";
 import { useEffect } from "react";
