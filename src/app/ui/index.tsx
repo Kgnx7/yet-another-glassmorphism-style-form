@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import LogInPage from "@/pages/LoginPage";
+import { LogInPage } from "@/pages";
 
 import "../styles/app.css";
 
