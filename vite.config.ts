@@ -1,22 +1,18 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: "/yet-another-glassmorphism-style-form/",
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src/"),
-    },
-  },
-  // experimental: {
-  //   renderBuiltUrl(
-  //     filename: string,
-  //     { hostType }: { hostType: "js" | "css" | "html" }
-  //   ) {
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
 
-  //   },
-  // },
+  return {
+    plugins: [react()],
+    base: env.VITE_PUBLIC_PATH,
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src/"),
+      },
+    },
+  };
 });

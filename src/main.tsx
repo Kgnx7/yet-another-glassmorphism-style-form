@@ -5,7 +5,7 @@ import { worker } from "./shared/mocks/browser";
 
 worker.start({
   serviceWorker: {
-    url: "/yet-another-glassmorphism-style-form/mockServiceWorker.js",
+    url: `${import.meta.env.VITE_PUBLIC_PATH ?? ""}/mockServiceWorker.js`,
   },
 });
 
