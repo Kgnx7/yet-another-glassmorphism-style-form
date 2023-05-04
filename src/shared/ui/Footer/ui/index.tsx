@@ -3,6 +3,8 @@ import { css } from "@emotion/css";
 const footerStyles = css`
   background: #0f2027;
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+
+  padding: 30px var(--base-padding);
 `;
 
 const footerLinkStyles = css`

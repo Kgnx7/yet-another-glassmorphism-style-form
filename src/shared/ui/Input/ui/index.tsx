@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import type { UseFormRegisterReturn } from "react-hook-form";
 
 const fieldsetStyles = css`
@@ -10,6 +10,12 @@ const fieldsetStyles = css`
   gap: 5px;
 `;
 
+const rowStyles = css`
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: start;
+`;
+
 const inputStyles = css`
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -17,6 +23,10 @@ const inputStyles = css`
   height: var(--base-height);
   padding: 0 var(--base-padding);
   border-radius: var(--base-border-radius);
+`;
+
+const cursorStyles = css`
+  cursor: pointer;
 `;
 
 interface InputProps<InputName extends string> {
@@ -33,14 +43,17 @@ export default function Input<InputName extends string>({
   required,
 }: InputProps<InputName>) {
   return (
-    <fieldset className={fieldsetStyles}>
-      <label htmlFor={registerProps.name}>{`${label} ${
-        required ?? false ? "*" : ""
-      }`}</label>
+    <fieldset
+      className={cx(fieldsetStyles, { [rowStyles]: type === "checkbox" })}
+    >
+      <label htmlFor={registerProps.name} className={cursorStyles}>
+        {`${label} ${required ?? false ? "*" : ""}`}
+      </label>
       <input
-        className={inputStyles}
+        className={cx(inputStyles, { [cursorStyles]: type === "checkbox" })}
         type={type}
         required={required}
+        id={registerProps.name}
         {...registerProps}
       />
     </fieldset>

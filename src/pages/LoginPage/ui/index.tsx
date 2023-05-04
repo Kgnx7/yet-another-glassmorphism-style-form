@@ -19,7 +19,7 @@ const pageStyles = css`
   justify-content: center;
   align-items: center;
   container-type: inline-size;
-  padding: var(--base-padding);
+  padding: 0 var(--base-padding);
 
   @media (max-width: 425px) {
     align-items: stretch;

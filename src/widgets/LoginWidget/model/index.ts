@@ -6,6 +6,7 @@ import axios from "axios";
 export interface LoginFormModel {
   email: string;
   password: string;
+  rememberMe: boolean;
 }
 
 export const useLogin = () => {

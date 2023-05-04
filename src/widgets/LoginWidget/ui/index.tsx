@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import { useForm } from "react-hook-form";
-import { Glass, Input, Button } from "@/shared/ui";
+import { Glass, Input, Button, Checkbox } from "@/shared/ui";
 
 import { LoginFormModel, useLogin } from "../model";
 import { useEffect } from "react";
@@ -34,9 +34,21 @@ const errorMsgStyles = css`
   color: OrangeRed;
 `;
 
+const registrationTipStyles = css`
+  display: block;
+  text-align: center;
+`;
+
+const usefullStuffStyles = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const loginFormKeys: { [key in keyof LoginFormModel]: key } = {
   email: "email",
   password: "password",
+  rememberMe: "rememberMe",
 };
 
 export default function LoginWidget() {
@@ -66,10 +78,20 @@ export default function LoginWidget() {
           registerProps={register(loginFormKeys.password)}
           required
         />
+        <div className={usefullStuffStyles}>
+          <Input<typeof loginFormKeys.rememberMe>
+            label="Remember me"
+            type="checkbox"
+            registerProps={register(loginFormKeys.rememberMe)}
+          />
+          <a href="#">Forgot your password?</a>
+        </div>
         <Button ButtonProps={{ type: "submit" }} loading={loginInProcess}>
           Login
         </Button>
-
+        <span className={registrationTipStyles}>
+          Don't have an account yet? <a href="#">Register now</a>
+        </span>
         {errorMsg && <span className={errorMsgStyles}>{errorMsg}</span>}
       </form>
     </Glass>
