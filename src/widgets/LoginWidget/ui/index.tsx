@@ -10,6 +10,7 @@ const loginWidgetTitle = css`
   font-weight: 400;
   margin-bottom: 15px;
   text-align: center;
+  font-size: 2em;
 `;
 
 const logInFormStyles = css`

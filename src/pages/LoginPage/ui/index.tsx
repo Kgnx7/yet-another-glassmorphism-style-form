@@ -26,6 +26,7 @@ const pageTitleStyles = css`
   font-size: 6rem;
   transform: translateY(40%);
   margin: 0;
+  text-align: center;
 
   @media (max-width: 768px) {
     font-size: 3rem;
